@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laravel-kubernetes-demo
+  namespace: default
+  labels:
+    app: laravel-kubernetes-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: laravel-kubernetes-demo
+  template:
+    metadata:
+      labels:
+        app: laravel-kubernetes-demo
+    spec:
+      containers:
+        - name: laravel-kubernetes-demo
+          image: chamopower/laravel-kubernetes-demo:$COMMIT_SHA1
+          ports:
+            - containerPort: 80
+              name: http

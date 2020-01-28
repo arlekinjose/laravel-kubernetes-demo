@@ -2,6 +2,7 @@ FROM composer:1.6.5 as build
 
 WORKDIR /app
 COPY . /app
+COPY ./auth.json /tmp
 RUN composer install
 
 FROM php:7.1.8-apache
