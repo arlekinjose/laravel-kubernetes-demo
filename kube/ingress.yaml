@@ -9,7 +9,7 @@ spec:
     serviceName: default-http-server
     servicePort: 80
   rules:
-    - host: laravel-kubernetes.demo
+    - host: arlestesting.xyz
     - http:
         paths:
           - path: /
